@@ -27,3 +27,8 @@
     --color-gray200: #efefef;
     --color-gray100: #f7f7f7;
 }
+
+* {
+    font-family: var(--font-pretendard), sans-serif;
+    line-height: 140%;
+}
