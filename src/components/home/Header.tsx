@@ -7,7 +7,7 @@ export default function Header() {
 
     return (
         <>
-            <header className="z-100 sticky top-[-55px] w-full h-[169px] bg-white85 border-b border-gray300 backdrop-blur-[3px]">
+            <header className="z-1 sticky top-[-55px] w-full h-[169px] bg-white85 border-b border-gray300 backdrop-blur-[3px]">
                 <div className="w-full h-[55px] flex justify-center items-end">
                     <img src={Logo} alt="logo" width={50} />
                 </div>

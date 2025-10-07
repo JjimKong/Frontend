@@ -6,7 +6,7 @@ export default function Filter() {
         <>
             <div className="relative w-full h-[40px] flex justify-between items-center">
                 <div className="w-[calc(100%-100px)] flex gap-1 overflow-scroll whitespace-nowrap">
-                    <div className="min-w-4 h-full"></div>
+                    <div className="min-w-4 h-full" />
                     <FilterItem>필터</FilterItem>
                 </div>
                 <div className="absolute right-24 w-2.5 h-full bg-[linear-gradient(90deg,#F7F7F700,#F7F7F7)]" />
