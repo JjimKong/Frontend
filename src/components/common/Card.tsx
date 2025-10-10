@@ -6,9 +6,7 @@ export default function Card() {
             <li className="card-wrapper">
                 <div className="w-full pt-5 pb-2 border-b flex gap-5 justify-between border-gray200">
                     <div className="min-w-0 flex flex-col">
-                        <h1 className="w-full text-gray1000 truncate">
-                            가게 이름
-                        </h1>
+                        <h1 className="w-full truncate">가게 이름</h1>
                         <h2 className="w-full text-gray500 text-xs truncate">
                             카테고리 | 주소
                         </h2>

@@ -9,7 +9,7 @@ export default function Gnb() {
                     to="/"
                     className={({ isActive }) =>
                         `mx-5 flex flex-col items-center justify-center text-xs ${
-                            isActive ? "text-gray1000" : "text-gray500"
+                            !isActive && "text-gray500"
                         }`
                     }
                 >
@@ -27,7 +27,7 @@ export default function Gnb() {
                     to="/mypage"
                     className={({ isActive }) =>
                         `mx-5 flex flex-col items-center justify-center text-xs ${
-                            isActive ? "text-gray1000" : "text-gray500"
+                            !isActive && "text-gray500"
                         }`
                     }
                 >
