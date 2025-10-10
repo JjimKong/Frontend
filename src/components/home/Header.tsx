@@ -2,13 +2,13 @@ import Logo from "@/assets/logo.svg";
 import { Search } from "lucide-react";
 
 export default function Header({
-    select,
-    setSelect,
+    category,
+    setCategory,
 }: {
-    select: string;
-    setSelect: (c: string) => void;
+    category: string;
+    setCategory: (c: string) => void;
 }) {
-    const category = ["전체", "식당", "카페", "숙소", "액티비티"];
+    const category_list = ["전체", "식당", "카페", "숙소", "액티비티"];
 
     return (
         <>
@@ -29,15 +29,15 @@ export default function Header({
                         />
                     </div>
                     <nav className="px-2 w-full h-[50px] flex overflow-scroll">
-                        {category.map((c) => (
+                        {category_list.map((c) => (
                             <button
                                 key={c}
                                 className="px-3 whitespace-nowrap"
-                                onClick={() => setSelect(c)}
+                                onClick={() => setCategory(c)}
                             >
                                 <div
                                     className={`h-full border-b-2 flex items-end pb-2.5 border-clear duration-100 ease-in text-gray500 ${
-                                        c === select
+                                        c === category
                                             ? "text-gray1000 border-gray1000"
                                             : "active:text-gray700"
                                     }`}

@@ -1,7 +1,9 @@
 import { SlidersHorizontal } from "lucide-react";
 import useScroll from "@/hooks/useScroll";
+import { useModalStore } from "@/stores/useModal";
 
-export default function FloatingButton() {
+export default function FloatingButton({ filter }: { filter: string[] }) {
+    const { openModal } = useModalStore();
     const scroll = useScroll();
 
     return (
@@ -12,8 +14,12 @@ export default function FloatingButton() {
                         className={`floating-btn bg-gray1000 ${
                             scroll > 100 && "translate-y-[-60px]"
                         }`}
+                        onClick={() => openModal("filter")}
                     >
-                        <SlidersHorizontal color="white" strokeWidth={1.5} />
+                        <SlidersHorizontal
+                            color={filter.length > 0 ? "#FF3939" : "white"}
+                            strokeWidth={1.5}
+                        />
                     </button>
                 </div>
             </div>
