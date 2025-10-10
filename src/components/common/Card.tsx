@@ -3,7 +3,7 @@ import { Star } from "lucide-react";
 export default function Card() {
     return (
         <>
-            <div className="card-wrapper">
+            <li className="card-wrapper">
                 <div className="w-full pt-5 pb-2 border-b flex gap-5 justify-between border-gray200">
                     <div className="min-w-0 flex flex-col">
                         <h1 className="w-full text-gray1000 truncate">
@@ -31,7 +31,7 @@ export default function Card() {
                     </p>
                     <div className="w-[68px] h-[68px] rounded-lg bg-gray500"></div>
                 </div>
-            </div>
+            </li>
         </>
     );
 }
