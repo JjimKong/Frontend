@@ -1,4 +1,5 @@
-@import "tailwindcss";
+@import "./tailwind.css";
+@import "./font.css";
 
 @theme {
     /* Default */
@@ -28,20 +29,16 @@
     --color-gray100: #f7f7f7;
 }
 
-* {
-    font-family: var(--font-pretendard), sans-serif;
-    line-height: 140%;
-}
-
 *::-webkit-scrollbar {
     display: none;
 }
 
-@layer components {
-    .card-wrapper {
-        @apply w-full bg-white rounded-2xl px-5;
-    }
-    .floating-btn {
-        @apply absolute flex right-5 w-13 h-13 justify-center items-center rounded-full duration-300;
-    }
+body {
+    font-family: "Pretendard-Light", sans-serif;
+    line-height: 140%;
+}
+
+h1 {
+    font-family: "Pretendard-Medium", sans-serif;
+    line-height: 120%;
 }
