@@ -1,9 +1,14 @@
 import Logo from "@/assets/logo.svg";
 import { Search } from "lucide-react";
 
-export default function Header() {
+export default function Header({
+    select,
+    setSelect,
+}: {
+    select: string;
+    setSelect: (c: string) => void;
+}) {
     const category = ["전체", "식당", "카페", "숙소", "액티비티"];
-    const select = "전체";
 
     return (
         <>
@@ -23,20 +28,25 @@ export default function Header() {
                             className="mt-[-32px] ml-3 text-gray600 peer-focus:text-clear peer-[&:not(:placeholder-shown)]:text-clear"
                         />
                     </div>
-                    <div className="px-2 w-full h-[50px] flex overflow-scroll">
+                    <nav className="px-2 w-full h-[50px] flex overflow-scroll">
                         {category.map((c) => (
-                            <button key={c} className="px-3 whitespace-nowrap">
+                            <button
+                                key={c}
+                                className="px-3 whitespace-nowrap"
+                                onClick={() => setSelect(c)}
+                            >
                                 <div
-                                    className={`h-full border-b-2 flex items-end pb-2.5 border-clear text-gray500 ${
-                                        c === select &&
-                                        "text-gray1000 border-gray1000"
+                                    className={`h-full border-b-2 flex items-end pb-2.5 border-clear duration-100 ease-in text-gray500 ${
+                                        c === select
+                                            ? "text-gray1000 border-gray1000"
+                                            : "active:text-gray700"
                                     }`}
                                 >
                                     {c}
                                 </div>
                             </button>
                         ))}
-                    </div>
+                    </nav>
                 </div>
             </header>
         </>
