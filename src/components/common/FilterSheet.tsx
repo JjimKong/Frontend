@@ -7,7 +7,6 @@ export default function FilterSheet({
     category,
     setSort,
     setRegion,
-    setCategory,
 }: {
     sort: string;
     region: string[];
@@ -36,7 +35,6 @@ export default function FilterSheet({
         "부산",
         "제주",
     ];
-    const category_list = ["식당", "카페", "숙소", "액티비티"];
 
     return (
         <>
