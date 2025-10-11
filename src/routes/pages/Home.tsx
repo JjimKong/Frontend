@@ -1,5 +1,4 @@
 import Header from "@/components/home/Header";
-import Gnb from "@/components/common/Gnb";
 import Card from "@/components/common/Card";
 import Filter from "@/components/common/Filter";
 import FloatingButton from "@/components/common/FloatingButton";
@@ -30,7 +29,6 @@ export default function Home() {
             </div>
             <FloatingButton filter={region} />
             <TopButton />
-            <Gnb />
 
             {openName === "sort" && <SortSheet sort={sort} setSort={setSort} />}
             {openName === "filter" && (

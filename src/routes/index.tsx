@@ -12,15 +12,24 @@ import Likes from "./pages/Likes";
 import Theme from "./pages/Theme";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import Information from "./pages/Information";
+import Login from "./pages/Login";
+import RootLayout from "./layouts/RootLayout";
 
 const router = createBrowserRouter([
     {
         path: "/",
-        element: <Home />,
+        Component: RootLayout,
+        children: [
+            { index: true, element: <Home /> },
+            { path: "mypage", element: <Mypage /> },
+        ],
+    },
+    {
+        path: "/login",
+        element: <Login />,
     },
     {
         path: "/mypage",
-        element: <Mypage />,
         children: [
             {
                 path: "collaborate",
