@@ -15,7 +15,7 @@ export default function SortSheet({
     return (
         <>
             <Sheet>
-                <div className="w-full flex flex-col gap-3">
+                <div className="w-full flex flex-col">
                     {sort_list.map((s) => (
                         <button
                             className={`w-full flex justify-between p-2 text-left rounded-lg active:bg-gray100 
