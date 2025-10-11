@@ -19,7 +19,7 @@ export default function Alert({
                 }`}
             >
                 <div
-                    className={`z-10 fixed w-[calc(100%-40px)] inset-x-0 top-1/2 translate-y-[-50%] m-auto max-w-md bg-white rounded-2xl p-5 ease-in-out duration-300
+                    className={`z-10 fixed w-[calc(100%-40px)] max-w-[408px] inset-x-0 top-1/2 translate-y-[-50%] m-auto bg-white rounded-2xl p-5 ease-in-out duration-300
                             ${
                                 isMounted
                                     ? "translate-y-0 opacity-100"
