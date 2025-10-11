@@ -1,4 +1,3 @@
-import { Link } from "react-router";
 import Sheet from "../common/Sheet";
 import { useModalStore } from "@/stores/useModal";
 
@@ -9,15 +8,15 @@ export default function AuthSheet() {
         <>
             <Sheet>
                 <div className="w-full flex flex-col">
-                    <Link
-                        to="/login"
+                    <button
                         className="w-full flex justify-between p-2 text-left rounded-lg active:bg-gray100"
+                        onClick={() => openModal("logout")}
                     >
                         로그아웃
-                    </Link>
+                    </button>
                     <button
                         className="w-full flex justify-between p-2 text-main600 text-left rounded-lg active:bg-gray100"
-                        onClick={() => openModal("alert")}
+                        onClick={() => openModal("withdraw")}
                     >
                         회원탈퇴
                     </button>
