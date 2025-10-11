@@ -4,11 +4,11 @@ import { Link, NavLink } from "react-router";
 export default function Gnb() {
     return (
         <>
-            <div className="z-1 fixed w-full max-w-md h-[72px] bottom-0 grid grid-cols-3 bg-white border-t border-gray300">
+            <nav className="z-1 fixed w-full max-w-md h-[72px] bottom-0 grid grid-cols-3 bg-white border-t border-gray300">
                 <NavLink
                     to="/"
                     className={({ isActive }) =>
-                        `mx-5 flex flex-col items-center justify-center text-xs ${
+                        `mx-5 flex flex-col items-center justify-center text-xs ease-in duration-100 active:text-gray600 ${
                             !isActive && "text-gray500"
                         }`
                     }
@@ -26,7 +26,7 @@ export default function Gnb() {
                 <NavLink
                     to="/mypage"
                     className={({ isActive }) =>
-                        `mx-5 flex flex-col items-center justify-center text-xs ${
+                        `mx-5 flex flex-col items-center justify-center text-xs ease-in duration-100 active:text-gray600 ${
                             !isActive && "text-gray500"
                         }`
                     }
@@ -34,7 +34,7 @@ export default function Gnb() {
                     <User strokeWidth={1.5} />
                     마이페이지
                 </NavLink>
-            </div>
+            </nav>
         </>
     );
 }
