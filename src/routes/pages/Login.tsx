@@ -28,7 +28,7 @@ export default function Login() {
                             저장하고 공유해요
                         </h2>
                     </div>
-                    <div className="w-full flex flex-col gap-2.5 px-5 py-12.5">
+                    <div className="w-full flex flex-col gap-2.5 px-5 pt-5 pb-12.5">
                         <Button
                             className="bg-[#FEE500] text-gray1000 active:bg-[#f1d900]"
                             icon={KakaoIcon}
