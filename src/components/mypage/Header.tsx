@@ -1,5 +1,5 @@
-import { useFlow } from "@stackflow/react/future";
 import { ChevronLeft } from "lucide-react";
+import { useNavigate } from "react-router";
 
 export default function Header({
     children,
@@ -10,7 +10,7 @@ export default function Header({
     isDelete?: boolean;
     onDelete?: () => void;
 }) {
-    const { pop } = useFlow();
+    const navigation = useNavigate();
 
     return (
         <>
@@ -18,7 +18,7 @@ export default function Header({
                 {children}
                 <button
                     className="absolute flex top-0 left-0 w-16 h-15 items-center pl-5 duration-200 active:text-gray700"
-                    onClick={() => pop()}
+                    onClick={() => navigation(-1)}
                 >
                     <ChevronLeft strokeWidth={1.5} />
                 </button>
