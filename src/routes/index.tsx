@@ -1,13 +1,12 @@
 import { createBrowserRouter, RouterProvider } from "react-router";
+import { Stack as Mypage } from "./stackflows/mypageStack";
 import Home from "./pages/Home";
-import Mypage from "./pages/Mypage";
 import Review from "./pages/Review";
 import Write from "./pages/Write";
 import Edit from "./pages/Edit";
 import NotFound from "./pages/NotFound";
 import TermsOfService from "./pages/TermsOfService";
 import Share from "./pages/Share";
-import Collaborate from "./pages/Collaborate";
 import Likes from "./pages/Likes";
 import Theme from "./pages/Theme";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
@@ -31,10 +30,6 @@ const router = createBrowserRouter([
     {
         path: "/mypage",
         children: [
-            {
-                path: "collaborate",
-                element: <Collaborate />,
-            },
             {
                 path: "share",
                 element: <Share />,

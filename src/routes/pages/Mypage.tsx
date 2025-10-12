@@ -1,13 +1,16 @@
+import type { ActivityComponentType } from "@stackflow/react";
 import Alert from "@/components/common/Alert";
 import AuthSheet from "@/components/mypage/AuthSheet";
 import { useModalStore } from "@/stores/useModal";
 import { ChevronRight, Heart, Share, Users } from "lucide-react";
 import { Link, useNavigate } from "react-router";
+import { useFlow } from "../stackflows/mypageStack";
 
-export default function Mypage() {
+const Mypage: ActivityComponentType = () => {
     const openName = useModalStore((state) => state.openName);
     const navigation = useNavigate();
     const { openModal } = useModalStore();
+    const { push } = useFlow();
 
     return (
         <>
@@ -29,13 +32,13 @@ export default function Mypage() {
                     <ChevronRight color="#979797" strokeWidth={1.25} />
                 </div>
                 <div className="mx-2.5 grid grid-cols-3 text-sm border-b border-gray300">
-                    <Link
-                        to="collaborate"
+                    <button
                         className="flex flex-col gap-2 items-center py-5 rounded-xl active:bg-gray100 ease-in-out duration-200"
+                        onClick={() => push("Collaborate", {})}
                     >
                         <Users strokeWidth={1.5} />
                         같이쓰기
-                    </Link>
+                    </button>
                     <Link
                         to="share"
                         className="rounded-xl active:bg-gray100 flex items-center ease-in-out duration-200"
@@ -107,4 +110,6 @@ export default function Mypage() {
             )}
         </>
     );
-}
+};
+
+export default Mypage;
