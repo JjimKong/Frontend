@@ -1,5 +1,5 @@
 import Card from "@/components/mypage/Card";
-import Header from "@/components/mypage/Header";
+import Header from "@/components/common/Header";
 import { useState } from "react";
 import Button from "@/components/common/Button";
 

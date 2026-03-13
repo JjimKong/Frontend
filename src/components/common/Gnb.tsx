@@ -4,7 +4,7 @@ import { Link, NavLink } from "react-router";
 export default function Gnb() {
     return (
         <>
-            <nav className="z-1 fixed w-full max-w-md h-[72px] bottom-0 grid grid-cols-3 bg-white border-t border-gray300">
+            <nav className="z-1 fixed w-full max-w-md h-18 bottom-0 grid grid-cols-3 bg-white border-t border-gray300">
                 <NavLink
                     to="/"
                     className={({ isActive }) =>

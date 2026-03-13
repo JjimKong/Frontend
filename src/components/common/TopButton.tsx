@@ -1,7 +1,8 @@
 import useScroll from "@/hooks/useScroll";
 import { ArrowUp } from "lucide-react";
+import { twMerge } from "tailwind-merge";
 
-export default function TopButton() {
+export default function TopButton({ className }: { className?: string }) {
     const scroll = useScroll();
 
     const scrollToTopHandler = () => {
@@ -10,7 +11,7 @@ export default function TopButton() {
 
     return (
         <>
-            <div className="fixed w-full bottom-36">
+            <div className={twMerge("fixed w-full bottom-36", className)}>
                 <div className="relative z-1 w-full max-w-md">
                     <button
                         className={`floating-btn bg-white border border-gray300 ${

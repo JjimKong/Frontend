@@ -1,9 +1,17 @@
 import { Star } from "lucide-react";
+import { useNavigate } from "react-router";
 
 export default function Card() {
+    const navigate = useNavigate();
+
     return (
         <>
-            <li className="card-wrapper">
+            <li
+                className="card-wrapper"
+                onClick={() => {
+                    navigate("/Review/placeId");
+                }}
+            >
                 <div className="w-full pt-5 pb-2 border-b flex gap-5 justify-between border-gray200">
                     <div className="min-w-0 flex flex-col">
                         <h1 className="w-full truncate">가게 이름</h1>
