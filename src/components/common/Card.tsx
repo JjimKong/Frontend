@@ -9,7 +9,7 @@ export default function Card() {
             <li
                 className="card-wrapper"
                 onClick={() => {
-                    navigate("/Review/placeId");
+                    navigate("/review/placeId");
                 }}
             >
                 <div className="w-full pt-5 pb-2 border-b flex gap-5 justify-between border-gray200">

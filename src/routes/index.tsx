@@ -24,39 +24,37 @@ const router = createBrowserRouter([
             {
                 path: "mypage",
                 element: <Mypage />,
-                children: [
-                    {
-                        path: "collaborate",
-                        element: <Collaborate />,
-                    },
-                    {
-                        path: "share",
-                        element: <Share />,
-                    },
-                    {
-                        path: "likes",
-                        element: <Likes />,
-                    },
-                    {
-                        path: "theme",
-                        element: <Theme />,
-                    },
-                    {
-                        path: "terms-of-service",
-                        element: <TermsOfService />,
-                    },
-                    {
-                        path: "privacy-policy",
-                        element: <PrivacyPolicy />,
-                    },
-                    {
-                        path: "information",
-                        element: <Information />,
-                    },
-                ],
             },
             {
-                path: "/review/:placeId",
+                path: "mypage/collaborate",
+                element: <Collaborate />,
+            },
+            {
+                path: "mypage/share",
+                element: <Share />,
+            },
+            {
+                path: "mypage/likes",
+                element: <Likes />,
+            },
+            {
+                path: "mypage/theme",
+                element: <Theme />,
+            },
+            {
+                path: "mypage/terms-of-service",
+                element: <TermsOfService />,
+            },
+            {
+                path: "mypage/privacy-policy",
+                element: <PrivacyPolicy />,
+            },
+            {
+                path: "mypage/information",
+                element: <Information />,
+            },
+            {
+                path: "review/:placeId",
                 element: <Review />,
             },
             {
