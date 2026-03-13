@@ -1,4 +1,5 @@
 import Alert from "@/components/common/Alert";
+import Gnb from "@/components/common/Gnb";
 import AuthSheet from "@/components/mypage/AuthSheet";
 import { useModalStore } from "@/stores/useModal";
 import { ChevronRight, Heart, Share, Users } from "lucide-react";
@@ -86,6 +87,8 @@ export default function Mypage() {
                     </Link>
                 </div>
             </div>
+
+            <Gnb />
 
             {openName === "auth" && <AuthSheet />}
             {openName === "logout" && (

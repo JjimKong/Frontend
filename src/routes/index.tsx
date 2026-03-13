@@ -21,57 +21,57 @@ const router = createBrowserRouter([
         Component: RootLayout,
         children: [
             { index: true, element: <Home /> },
-            { path: "mypage", element: <Mypage /> },
+            {
+                path: "mypage",
+                element: <Mypage />,
+                children: [
+                    {
+                        path: "collaborate",
+                        element: <Collaborate />,
+                    },
+                    {
+                        path: "share",
+                        element: <Share />,
+                    },
+                    {
+                        path: "likes",
+                        element: <Likes />,
+                    },
+                    {
+                        path: "theme",
+                        element: <Theme />,
+                    },
+                    {
+                        path: "terms-of-service",
+                        element: <TermsOfService />,
+                    },
+                    {
+                        path: "privacy-policy",
+                        element: <PrivacyPolicy />,
+                    },
+                    {
+                        path: "information",
+                        element: <Information />,
+                    },
+                ],
+            },
+            {
+                path: "/review/:placeId",
+                element: <Review />,
+            },
+            {
+                path: "login",
+                element: <Login />,
+            },
+            {
+                path: "write",
+                element: <Write />,
+            },
+            {
+                path: "edit/:postId",
+                element: <Edit />,
+            },
         ],
-    },
-    {
-        path: "/login",
-        element: <Login />,
-    },
-    {
-        path: "/mypage",
-        children: [
-            {
-                path: "collaborate",
-                element: <Collaborate />,
-            },
-            {
-                path: "share",
-                element: <Share />,
-            },
-            {
-                path: "likes",
-                element: <Likes />,
-            },
-            {
-                path: "theme",
-                element: <Theme />,
-            },
-            {
-                path: "terms-of-service",
-                element: <TermsOfService />,
-            },
-            {
-                path: "privacy-policy",
-                element: <PrivacyPolicy />,
-            },
-            {
-                path: "information",
-                element: <Information />,
-            },
-        ],
-    },
-    {
-        path: "/review/:placeId",
-        element: <Review />,
-    },
-    {
-        path: "/write",
-        element: <Write />,
-    },
-    {
-        path: "/edit/:postId",
-        element: <Edit />,
     },
     {
         path: "*",

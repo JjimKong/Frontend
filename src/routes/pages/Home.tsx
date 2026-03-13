@@ -1,12 +1,13 @@
 import Header from "@/components/home/Header";
 import Card from "@/components/common/Card";
 import Filter from "@/components/common/Filter";
-import FloatingButton from "@/components/common/FloatingButton";
 import TopButton from "@/components/common/TopButton";
 import SortSheet from "@/components/common/SortSheet";
 import { useState } from "react";
 import { useModalStore } from "@/stores/useModal";
 import FilterSheet from "@/components/common/FilterSheet";
+import FilterButton from "@/components/common/FilterButton";
+import Gnb from "@/components/common/Gnb";
 
 export default function Home() {
     const openName = useModalStore((state) => state.openName);
@@ -27,8 +28,10 @@ export default function Home() {
                     <Card />
                 </ul>
             </div>
-            <FloatingButton filter={region} />
+
+            <FilterButton filter={region} />
             <TopButton />
+            <Gnb />
 
             {openName === "sort" && <SortSheet sort={sort} setSort={setSort} />}
             {openName === "filter" && (
