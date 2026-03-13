@@ -16,8 +16,10 @@ export default function Filter({
             <div className="relative w-full h-[40px] flex justify-between items-center">
                 <ul className="w-[calc(100%-110px)] flex gap-1 overflow-scroll whitespace-nowrap pr-3">
                     <div className="min-w-4 h-full" />
-                    {region.map((r) => (
-                        <FilterItem disabled>{r}</FilterItem>
+                    {region.map((r, i) => (
+                        <FilterItem key={i} disabled>
+                            {r}
+                        </FilterItem>
                     ))}
                 </ul>
                 <div className="absolute right-27.25 w-3 h-full bg-[linear-gradient(90deg,#F7F7F700,#F7F7F7)]" />

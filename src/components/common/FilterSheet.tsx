@@ -42,17 +42,20 @@ export default function FilterSheet({
                 <div className="flex flex-col gap-2.5 mb-5">
                     정렬
                     <ul className="flex gap-1.25">
-                        {sort_list.map((s) =>
+                        {sort_list.map((s, i) =>
                             s === sort ? (
-                                <FilterItem color="main">{s}</FilterItem>
+                                <FilterItem key={i} color="main">
+                                    {s}
+                                </FilterItem>
                             ) : (
                                 <FilterItem
+                                    key={i}
                                     color="gray"
                                     onClick={() => setSort(s)}
                                 >
                                     {s}
                                 </FilterItem>
-                            )
+                            ),
                         )}
                     </ul>
                 </div>
@@ -67,14 +70,15 @@ export default function FilterSheet({
                 <div className="w-full flex flex-col gap-2.5 mb-5">
                     지역
                     <ul className="flex flex-wrap gap-1.25">
-                        {region_list.map((r) =>
+                        {region_list.map((r, i) =>
                             region.includes(r) ? (
                                 <FilterItem
+                                    key={i}
                                     onClick={() =>
                                         setRegion(
                                             region.filter(
-                                                (before_r) => before_r !== r
-                                            )
+                                                (before_r) => before_r !== r,
+                                            ),
                                         )
                                     }
                                 >
@@ -82,12 +86,13 @@ export default function FilterSheet({
                                 </FilterItem>
                             ) : (
                                 <FilterItem
+                                    key={i}
                                     color="gray"
                                     onClick={() => setRegion([...region, r])}
                                 >
                                     {r}
                                 </FilterItem>
-                            )
+                            ),
                         )}
                     </ul>
                 </div>
