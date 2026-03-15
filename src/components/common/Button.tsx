@@ -18,25 +18,27 @@ export default function Button({
         <>
             <button
                 className={twMerge(
-                    `relative w-full h-[50px] rounded-xl duration-200 ease-in-out
+                    `relative w-full h-13 rounded-xl duration-200 ease-in-out
                 ${
                     disabled
-                        ? "bg-gray200 dark:bg-gray900 text-gray500 dark:text-gray600 cursor-default"
+                        ? "bg-gray200 text-gray500 cursor-default"
                         : color === "main"
-                        ? "bg-main500 text-white active:bg-main600"
-                        : color === "gray"
-                        ? "bg-gray200 text-gray1000 active:bg-gray300"
-                        : "bg-gray1000 text-white active:bg-gray900"
+                          ? "bg-main500 text-white active:bg-main600"
+                          : color === "gray"
+                            ? "bg-gray200 text-gray1000 active:bg-gray300"
+                            : "bg-gray1000 text-white active:bg-gray900"
                 }`,
-                    className
+                    className,
                 )}
                 {...props}
             >
-                <div className="absolute pl-5 flex justify-center gap-2">
+                <div className="relative pl-5 flex justify-center items-center gap-2">
                     {icon && (
-                        <span className="relative aspect-[1/1] w-[20px]">
-                            <img src={icon} alt="아이콘" />
-                        </span>
+                        <img
+                            src={icon}
+                            alt="아이콘"
+                            className="absolute left-5 top-1/2 mt-px aspect-[1/1] w-5"
+                        />
                     )}
                 </div>
                 {children}
