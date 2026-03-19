@@ -2,7 +2,6 @@ import Logo from "@/assets/images/logo.svg";
 import Character from "@/assets/images/character.svg";
 import Button from "@/components/common/Button";
 import KakaoIcon from "@/assets/icons/kakaoIcon.png";
-import NaverIcon from "@/assets/icons/naverIcon.png";
 import GoogleIcon from "@/assets/icons/googleIcon.png";
 
 export default function Login() {
@@ -22,24 +21,18 @@ export default function Login() {
                             <br />
                             나만의 솔직 리뷰 저장소
                         </h1>
-                        <h2>
+                        <h2 className="text-sm">
                             내가 좋아하는 장소{" "}
                             <span className="text-main500">찜콩</span>해서
                             저장하고 공유해요
                         </h2>
                     </div>
-                    <div className="w-full flex flex-col gap-2.5 px-5 pt-5 pb-12.5">
+                    <div className="w-full flex flex-col gap-2.5 px-5 py-12.5">
                         <Button
                             className="bg-[#FEE500] text-gray1000 active:bg-[#f1d900]"
                             icon={KakaoIcon}
                         >
                             카카오톡으로 시작하기
-                        </Button>
-                        <Button
-                            className="bg-[#03c75a] text-white active:bg-[#00b953]"
-                            icon={NaverIcon}
-                        >
-                            네이버로 시작하기
                         </Button>
                         <Button
                             className="bg-white text-gray1000 active:bg-gray100"
