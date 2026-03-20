@@ -7,11 +7,13 @@ export default function Header({
     isDelete,
     onDelete,
     isScrollHeader,
+    noLine,
 }: {
     children?: React.ReactNode;
     isDelete?: boolean;
     onDelete?: () => void;
     isScrollHeader?: boolean;
+    noLine?: boolean;
 }) {
     const navigation = useNavigate();
     const scroll = useScroll();
@@ -19,8 +21,9 @@ export default function Header({
     return (
         <>
             <div
-                className={`fixed z-10 flex justify-center items-center w-full max-w-md h-15 bg-white/85 border-b border-gray300 backdrop-blur-xs duration-300
-                ${isScrollHeader && (scroll > 100 ? "translate-y-0" : "-translate-y-15")}`}
+                className={`fixed z-10 flex justify-center items-center w-full max-w-md h-15 bg-white/85 border-gray300 backdrop-blur-xs duration-300
+                ${isScrollHeader && (scroll > 100 ? "translate-y-0" : "-translate-y-15")}
+                ${!noLine && "border-b"}`}
             >
                 {children}
                 <button
