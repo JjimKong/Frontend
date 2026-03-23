@@ -7,6 +7,7 @@ interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> {
     errorMsg?: string;
     label?: string;
     icon?: React.ReactNode;
+    children?: React.ReactNode;
 }
 
 export default function Input({
@@ -15,6 +16,8 @@ export default function Input({
     className = "",
     label,
     icon,
+    children,
+    value,
     ...props
 }: InputProps) {
     return (
@@ -26,12 +29,14 @@ export default function Input({
                     </label>
                 )}
                 <input
+                    value={value}
                     className={twMerge(
-                        `text-gray1000 placeholder-gray500 h-13 w-full rounded-xl border border-gray-300 px-4 duration-200 ease-in-out focus:outline-none ${error && "border-red-600"} ${icon && "pr-10"}`,
+                        `peer text-gray1000 placeholder-gray500 h-13 w-full border-b border-gray-300 duration-200 ease-in-out focus:outline-none ${error && "border-red-600"} ${icon && "pr-10"}`,
                         className,
                     )}
                     {...props}
                 />
+
                 <label
                     className={`h6 pl-2 text-red-600 transition-all duration-200 ease-in-out ${
                         error
@@ -41,10 +46,15 @@ export default function Input({
                 >
                     {errorMsg}
                 </label>
+
+                <label
+                    className={`text-gray500 absolute left-0 -translate-y-1/2 duration-200 peer-focus:top-0 peer-focus:text-xs ${value ? "top-0 text-xs" : "top-1/2"}`}
+                >
+                    {children}
+                </label>
+
                 {icon && (
-                    <div
-                        className={`text-gray500 absolute top-[27px] right-3 -translate-y-1/2 cursor-pointer duration-200 ${label && "top-[53px]"}`}
-                    >
+                    <div className="text-gray500 absolute top-1/2 right-0 -translate-y-1/2 cursor-pointer duration-200">
                         {icon}
                     </div>
                 )}
