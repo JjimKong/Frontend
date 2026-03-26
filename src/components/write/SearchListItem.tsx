@@ -6,8 +6,8 @@ export default function SearchListItem({
     place,
 }: {
     id: number;
-    setPlace: (p: string) => void;
-    place: string;
+    setPlace: (p: Place) => void;
+    place: Place;
 }) {
     return (
         <li
@@ -20,10 +20,8 @@ export default function SearchListItem({
                 <Utensils strokeWidth={1.5} size={20} />
             </div>
             <div>
-                <h3 className="font-normal">{place}</h3>
-                <p className="text-sm text-gray600">
-                    서울특별시 마포구 모시깽이로 123
-                </p>
+                <h3 className="font-normal">{place.name}</h3>
+                <p className="text-sm text-gray600">{place.address}</p>
             </div>
         </li>
     );
