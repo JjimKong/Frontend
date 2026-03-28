@@ -1,4 +1,4 @@
-import { Utensils } from "lucide-react";
+import { Coffee, FerrisWheel, Hotel, Utensils } from "lucide-react";
 
 export default function SearchListItem({
     id,
@@ -17,7 +17,15 @@ export default function SearchListItem({
             }}
         >
             <div className="w-10 h-10 bg-gray100 rounded-full flex justify-center items-center">
-                <Utensils strokeWidth={1.5} size={20} />
+                {place.category === "식당" ? (
+                    <Utensils strokeWidth={1.5} size={20} />
+                ) : place.category === "카페" ? (
+                    <Coffee strokeWidth={1.5} size={20} />
+                ) : place.category === "숙소" ? (
+                    <Hotel strokeWidth={1.5} size={20} />
+                ) : (
+                    <FerrisWheel strokeWidth={1.5} size={20} />
+                )}
             </div>
             <div>
                 <h3 className="font-normal">{place.name}</h3>
