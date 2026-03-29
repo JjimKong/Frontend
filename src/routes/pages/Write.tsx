@@ -1,13 +1,25 @@
 import Header from "@/components/common/Header";
 import Step1 from "@/components/write/Step1";
+import Step2 from "@/components/write/Step2";
+import { useState } from "react";
 
 export default function Write() {
+    const [step, setStep] = useState(1);
+
+    const goToStepHandler = (s: number) => {
+        setStep(s);
+    };
+
     return (
         <>
             <Header noLine />
-            <div className="pt-25 px-5 flex flex-col gap-10">
-                <Step1 />
-            </div>
+            {step === 1 ? (
+                <Step1 onClick={goToStepHandler} />
+            ) : step === 2 ? (
+                <Step2 />
+            ) : (
+                <></>
+            )}
         </>
     );
 }
