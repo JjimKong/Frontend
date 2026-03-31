@@ -1,0 +1,185 @@
+@import "react-datepicker/dist/react-datepicker.css";
+
+.react-datepicker {
+    border: none;
+    width: 100%;
+}
+
+.react-datepicker {
+    border: none;
+    width: 100%;
+    font-family:
+        "Pretendard-Regular", sans-serif !important; /* 기본 폰트 적용 */
+}
+
+.react-datepicker__month-container {
+    width: 100%;
+}
+
+/* 타이틀(“8월 2025”) 숨김 */
+.react-datepicker__current-month {
+    display: none !important;
+}
+
+/* ───────── 헤더 레이아웃 및 화살표 ───────── */
+.react-datepicker__header {
+    background: white;
+    border-bottom: none;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+/* 화살표 위치 및 색상 교정 */
+.react-datepicker__navigation {
+    top: 1.1rem !important;
+}
+.react-datepicker__navigation-icon::before {
+    border-color: #727272;
+    border-width: 2px 2px 0 0 !important;
+}
+
+/* 드롭다운 행: 년도 → 월 순서 */
+.react-datepicker__header__dropdown {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.react-datepicker__year-dropdown-container--select {
+    order: 1;
+    display: flex;
+    align-items: center;
+}
+.react-datepicker__month-dropdown-container--select {
+    order: 2;
+}
+
+/* '년' 글자를 가짜로 만들어 붙이기 */
+.react-datepicker__year-dropdown-container--select::after {
+    content: "년";
+    font-size: 16px;
+    font-weight: 600;
+    color: #2f2f2f;
+    margin-top: 4px;
+    margin-left: -4px;
+    margin-right: -20px;
+}
+
+/* ───────── 연/월 셀렉트 박스 (텍스트처럼 렌더링) ───────── */
+.react-datepicker__year-select,
+.react-datepicker__month-select {
+    appearance: none;
+    border: none !important;
+    font-size: 16px;
+    font-weight: 600;
+    color: #2f2f2f;
+    padding: 0 0.2rem !important;
+}
+.react-datepicker__year-select:focus,
+.react-datepicker__month-select:focus {
+    outline: none;
+}
+
+/* ───────── 요일 헤더 ───────── */
+.react-datepicker__day-names {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    grid-auto-rows: 2rem;
+    padding: 0.25rem 0.5rem;
+}
+.react-datepicker__day-name {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #2f2f2f;
+    font-weight: 500;
+    font-size: small;
+    margin: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/* 요일 색상 강조 */
+.react-datepicker__day-name:nth-child(1) {
+    color: #ff5757;
+}
+.react-datepicker__day-name:nth-child(7) {
+    color: #57a0ff;
+}
+
+/* ───────── 월/주/셀 레이아웃 ───────── */
+.react-datepicker__month {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    grid-auto-rows: 2.6rem;
+    padding: 0.25rem 0.5rem;
+    margin: 0; /* gap: 0 은 기본값이므로 제거 */
+}
+.react-datepicker__week {
+    display: contents;
+}
+
+/* ───────── 날짜 셀 ───────── */
+.react-datepicker__day {
+    width: 100%;
+    height: 100%;
+    line-height: 2.6rem;
+    margin: 0;
+    border-radius: 100%;
+    color: #454545;
+    font-size: 14px;
+}
+
+/* hover */
+.react-datepicker__day:hover {
+    border-radius: 8px !important;
+}
+
+/* 오늘 날짜 표시 */
+.react-datepicker__day--today {
+    font-weight: 600;
+    background: #ffe8e8;
+}
+.react-datepicker__day--today:hover,
+.react-datepicker__day--keyboard-today:hover {
+    background: #ffe8e8 !important;
+}
+
+/* 선택/키보드 포커스 */
+.react-datepicker__day--selected,
+.react-datepicker__day--keyboard-selected {
+    background: #ff5151;
+    color: #ffffff !important;
+    font-weight: 600;
+}
+.react-datepicker__day--selected:hover,
+.react-datepicker__day--keyboard-selected:hover {
+    background: #ff5151 !important;
+    color: #ffffff !important;
+}
+
+/* 이번 달 아님(흐리게) */
+.react-datepicker__day--outside-month {
+    color: #bfbfbf;
+    pointer-events: none;
+}
+/* ───────── 선택 불가(비활성화) 날짜 ───────── */
+.react-datepicker__day--disabled {
+    color: #d4d4d4 !important;
+}
+.react-datepicker__day--disabled:hover {
+    color: #d4d4d4;
+    background-color: transparent !important;
+}
+
+/* 주말 색상 */
+.react-datepicker__week
+    .react-datepicker__day:not(.react-datepicker__day--outside-month):nth-child(
+        1
+    ) {
+    color: #ff5757; /* 일요일 */
+}
+.react-datepicker__week
+    .react-datepicker__day:not(.react-datepicker__day--outside-month):nth-child(
+        7
+    ) {
+    color: #57a0ff; /* 토요일 */
+}
