@@ -1,6 +1,7 @@
 import Header from "@/components/common/Header";
 import Step1 from "@/components/write/Step1";
 import Step2 from "@/components/write/Step2";
+import Step3 from "@/components/write/Step3";
 import { useState } from "react";
 
 export default function Write() {
@@ -16,9 +17,9 @@ export default function Write() {
             {step === 1 ? (
                 <Step1 onClick={goToStepHandler} />
             ) : step === 2 ? (
-                <Step2 />
+                <Step2 onClick={goToStepHandler} />
             ) : (
-                <></>
+                <Step3 />
             )}
         </>
     );

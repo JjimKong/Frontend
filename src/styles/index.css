@@ -1,6 +1,7 @@
 @import "./tailwind.css";
 @import "./font.css";
 @import "./calendar.css";
+@import "./animation.css";
 
 @theme {
     /* Default */
