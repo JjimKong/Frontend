@@ -4,8 +4,8 @@
         margin-bottom: 0;
     }
     to {
-        max-height: 300px;
-        margin-bottom: 2rem;
+        max-height: 500px;
+        margin-bottom: 32px;
     }
 }
 
@@ -22,6 +22,11 @@
 
 .inline-animate {
     animation:
-        expand-space 0.8s both,
+        expand-space 0.4s both,
         pop-out 0.8s 0.2s both;
+}
+.inline-animate2 {
+    animation:
+        expand-space 0.4s both,
+        pop-out 0.8s 0.4s both;
 }
