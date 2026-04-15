@@ -5,15 +5,18 @@ import { twMerge } from "tailwind-merge";
 export default function StarInput({
     children,
     label,
+    star,
+    setStar,
     className,
     onComplete,
 }: {
     children: React.ReactNode;
     label: string[];
+    star: number;
+    setStar: (s: number) => void;
     className?: string;
     onComplete?: (s: number) => void;
 }) {
-    const [star, setStar] = useState(0);
     const [hoverStar, setHoverStar] = useState(0);
 
     const selectStar = (s: number) => {

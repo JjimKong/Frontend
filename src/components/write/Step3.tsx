@@ -1,17 +1,19 @@
 import { useEffect, useState } from "react";
 import StarInput from "./StarInput";
 import { STAR_INPUT } from "@/constants/write";
+import PhotoInput from "./PhotoInput";
+import TextArea from "./TextArea";
 
 export default function Step3() {
     const [step, setStep] = useState(0);
     const [isMounted, setIsMounted] = useState(false);
-    const visibleStars = STAR_INPUT[0].star.slice(0, step).reverse();
+    const [images, setImages] = useState<string[]>([]);
+    const [review, setReview] = useState("");
+    const [stars, setStars] = useState<number[]>([0, 0, 0, 0]);
 
     useEffect(() => {
         setIsMounted(true);
-        const timer = setTimeout(() => {
-            setStep(1);
-        }, 600);
+        const timer = setTimeout(() => setStep(1), 400);
 
         return () => clearTimeout(timer);
     }, []);
@@ -21,43 +23,57 @@ export default function Step3() {
             <div className="pt-25 px-5 flex flex-col gap-10 pb-24">
                 <div>
                     <h1
-                        className={`text-2xl font-medium transition-all delay-200 duration-800 ${
-                            !isMounted
-                                ? "-translate-y-2 opacity-0"
-                                : "translate-y-0 opacity-100"
+                        className={`text-2xl font-medium delay-200 duration-800 ${
+                            !isMounted && "-translate-y-2 opacity-0"
                         }`}
                     >
                         9월 1일에 방문한
                     </h1>
                     <h1
-                        className={`text-2xl font-medium transition-all delay-400 duration-800 ${
-                            !isMounted
-                                ? "-translate-y-2 opacity-0"
-                                : "translate-y-0 opacity-100"
+                        className={`text-2xl font-medium delay-400 duration-800 ${
+                            !isMounted && "-translate-y-2 opacity-0"
                         }`}
                     >
                         카츠요에 대한 리뷰를 남겨주세요
                     </h1>
                 </div>
 
+                {!!stars[3] && (
+                    <div className="flex flex-col -mb-10">
+                        <div className="inline-animate">
+                            <PhotoInput images={images} setImages={setImages} />
+                        </div>
+                        <div className="inline-animate2 -mt-4">
+                            <TextArea
+                                value={review}
+                                maxLength={500}
+                                onChange={(e) => setReview(e.target.value)}
+                            />
+                        </div>
+                    </div>
+                )}
+
                 <div className="flex flex-col">
-                    {visibleStars.map((star, index) => {
-                        const isCurrent = index === 0;
+                    {STAR_INPUT[0].star.slice(0, step).map((star, index) => {
+                        const isCurrent = index === step - 1;
 
                         return (
                             <div
                                 key={star.name}
-                                className="inline-animate origin-top"
+                                style={{ order: -index }}
+                                className="inline-animate"
                             >
                                 <StarInput
                                     label={star.label}
+                                    star={stars[index]}
+                                    setStar={(value: number) => {
+                                        const newStars = [...stars];
+                                        newStars[index] = value;
+                                        setStars(newStars);
+                                    }}
                                     onComplete={() => {
-                                        if (
-                                            isCurrent &&
-                                            step < STAR_INPUT[0].star.length
-                                        ) {
+                                        if (isCurrent)
                                             setStep((prev) => prev + 1);
-                                        }
                                     }}
                                 >
                                     {star.name}
