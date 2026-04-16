@@ -3,8 +3,9 @@ import StarInput from "./StarInput";
 import { STAR_INPUT } from "@/constants/write";
 import PhotoInput from "./PhotoInput";
 import TextArea from "./TextArea";
+import Button from "../common/Button";
 
-export default function Step3() {
+export default function Step3({ onClick }: { onClick: () => void }) {
     const [step, setStep] = useState(0);
     const [isMounted, setIsMounted] = useState(false);
     const [images, setImages] = useState<string[]>([]);
@@ -81,6 +82,16 @@ export default function Step3() {
                             </div>
                         );
                     })}
+                </div>
+                <div className="fixed bottom-0 w-full max-w-md flex flex-col items-center gap-3 p-5 -ml-5">
+                    <div className="absolute inset-0 pointer-events-none bg-white/50 backdrop-blur [mask-image:linear-gradient(to_bottom,transparent_0%,black_100%)]" />
+                    {review ? (
+                        <Button color="main" onClick={() => onClick()}>
+                            리뷰 작성
+                        </Button>
+                    ) : (
+                        <Button disabled>리뷰 작성</Button>
+                    )}
                 </div>
             </div>
         </>
