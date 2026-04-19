@@ -79,12 +79,9 @@ export default function Mypage() {
                     >
                         개인정보 처리방침
                     </Link>
-                    <Link
-                        to="information"
-                        className="px-2.5 py-3 rounded-lg active:bg-gray100 ease-in-out duration-200 text-lg"
-                    >
-                        앱 정보
-                    </Link>
+                    <div className="px-2.5 py-3 rounded-lg active:bg-gray100 ease-in-out duration-200 text-lg">
+                        앱 정보 <span className="text-gray500">v.1.0.0</span>
+                    </div>
                 </div>
             </div>
 
