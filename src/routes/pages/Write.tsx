@@ -6,7 +6,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router";
 
 export default function Write() {
-    const [step, setStep] = useState(3);
+    const [step, setStep] = useState(1);
     const navigation = useNavigate();
 
     const goToStepHandler = (s: number) => {
