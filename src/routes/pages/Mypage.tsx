@@ -1,6 +1,7 @@
 import Alert from "@/components/common/Alert";
 import Gnb from "@/components/common/Gnb";
 import AuthSheet from "@/components/mypage/AuthSheet";
+import ThemeSheet from "@/components/mypage/ThemeSheet";
 import { useModalStore } from "@/stores/useModal";
 import { ChevronRight, Heart, Share, Users } from "lucide-react";
 import { Link, useNavigate } from "react-router";
@@ -55,12 +56,12 @@ export default function Mypage() {
                     </Link>
                 </div>
                 <div className="flex flex-col mt-5">
-                    <Link
-                        to="theme"
-                        className="px-2.5 py-3 rounded-lg active:bg-gray100 ease-in-out duration-200 text-lg"
+                    <button
+                        className="px-2.5 py-3 rounded-lg active:bg-gray100 ease-in-out duration-200 text-lg text-start"
+                        onClick={() => openModal("theme")}
                     >
                         테마 설정
-                    </Link>
+                    </button>
                     <Link
                         to="http://pf.kakao.com/_QxbYxcn"
                         className="px-2.5 py-3 rounded-lg active:bg-gray100 ease-in-out duration-200 text-lg"
@@ -105,6 +106,7 @@ export default function Mypage() {
                     정말 탈퇴 하시겠어요?
                 </Alert>
             )}
+            {openName === "theme" && <ThemeSheet />}
         </>
     );
 }
