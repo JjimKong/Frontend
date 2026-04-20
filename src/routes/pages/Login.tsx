@@ -16,7 +16,7 @@ export default function Login() {
                     />
                     <img src={Character} alt="character" className="w-[70%]" />
                     <div className="w-full px-5">
-                        <h1 className="text-2xl mb-5">
+                        <h1 className="mb-5">
                             리뷰 클렌징 없는
                             <br />
                             나만의 솔직 리뷰 저장소

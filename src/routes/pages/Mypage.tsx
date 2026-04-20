@@ -18,7 +18,7 @@ export default function Mypage() {
                     onClick={() => openModal("auth")}
                 >
                     <div>
-                        <h1 className="text-2xl leading-[120%] mb-1">
+                        <h1 className="mb-1">
                             안녕하세요
                             <br />
                             <span className="text-main500">문재경</span>님

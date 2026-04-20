@@ -14,10 +14,10 @@ export default function Card() {
             >
                 <div className="w-full pt-5 pb-2 border-b flex gap-5 justify-between border-gray200">
                     <div className="min-w-0 flex flex-col">
-                        <h1 className="w-full truncate">가게 이름</h1>
-                        <h2 className="w-full text-gray500 text-xs truncate">
+                        <h2 className="w-full truncate">가게 이름</h2>
+                        <h3 className="w-full text-gray500 text-xs truncate">
                             카테고리 | 주소
-                        </h2>
+                        </h3>
                     </div>
                     <div className="h-full flex items-center">
                         <Star

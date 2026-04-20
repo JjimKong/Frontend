@@ -28,7 +28,7 @@ export default function Step2({ onClick }: { onClick: (s: number) => void }) {
         <>
             <div className="pt-25 px-5 flex flex-col gap-10">
                 <h1
-                    className={`text-2xl font-medium delay-200 duration-800 ${!isMounted && "-translate-y-2 opacity-0"}`}
+                    className={`delay-200 duration-800 ${!isMounted && "-translate-y-2 opacity-0"}`}
                 >
                     카츠요에 언제 방문하셨나요?
                 </h1>

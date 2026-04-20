@@ -24,14 +24,14 @@ export default function Step3({ onClick }: { onClick: () => void }) {
             <div className="pt-25 px-5 flex flex-col gap-10 pb-24">
                 <div>
                     <h1
-                        className={`text-2xl font-medium delay-200 duration-800 ${
+                        className={`delay-200 duration-800 ${
                             !isMounted && "-translate-y-2 opacity-0"
                         }`}
                     >
                         9월 1일에 방문한
                     </h1>
                     <h1
-                        className={`text-2xl font-medium delay-400 duration-800 ${
+                        className={`delay-400 duration-800 ${
                             !isMounted && "-translate-y-2 opacity-0"
                         }`}
                     >
